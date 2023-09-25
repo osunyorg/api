@@ -1,4 +1,4 @@
-class Osuny::API::Communication::Website::Post < Osuny::API
+class OsunyApi::Communication::Website::Post < OsunyApi::Resource
 
   def path
     'posts/'

@@ -1,4 +1,4 @@
-class Osuny::API::Communication < Osuny::API
+class OsunyApi::Communication < OsunyApi::Resource
   def path
     'communication/'
   end

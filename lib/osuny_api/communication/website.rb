@@ -1,4 +1,4 @@
-class Osuny::API::Communication::Website < Osuny::API
+class OsunyApi::Communication::Website < OsunyApi::Resource
   attr_accessor :id
 
   def path

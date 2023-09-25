@@ -1,21 +1,20 @@
-# Osuny
+# Osuny API
 
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add osuny
+    $ bundle add osuny_api
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install osuny
+    $ gem install osuny_api
 
 ## Usage
 
 ```
-osuny = Osuny.new instance: 'https://instance.osuny.org',
-                  access_key: 'real_access_key',
-                  secret_key: 'real_secret_key'
+osuny = OsunyApi.new  instance: 'https://instance.osuny.org',
+                      token: 'real_token'
 
 migration_identifier = "identifiant-unique"
 post = {
