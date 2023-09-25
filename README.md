@@ -13,7 +13,7 @@ If bundler is not being used to manage dependencies, install the gem by executin
 ## Usage
 
 ```
-osuny = OsunyApi.new  instance: 'https://instance.osuny.org',
+osuny = OsunyApi.new  host: 'https://instance.osuny.org',
                       token: 'real_token'
 
 migration_identifier = "identifiant-unique"

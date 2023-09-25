@@ -1,13 +1,13 @@
 require 'httparty'
 
 class OsunyApi::Client
-  attr_reader :instance, :token
+  attr_reader :host, :token
 
   LOG_GREEN = 32
   LOG_RED = 31
 
   def initialize(options = {})
-    @instance = options[:instance]
+    @host = options[:host]
     @token = options[:token]
   end
 

@@ -8,7 +8,7 @@ class OsunyApi::Resource
   end
 
   def path
-    "#{client.instance}/api/osuny/"
+    "#{client.host}/api/osuny/"
   end
 
   def full_path
