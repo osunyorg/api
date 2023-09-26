@@ -1,12 +1,14 @@
-class OsunyApi::Communication::Website < OsunyApi::Resource
-  attr_accessor :id
+module OsunyApi
+  class Communication::Website < Resource
+    attr_accessor :id
 
-  def path
-    id.nil? ? "websites/"
-            : "websites/#{id}/"
-  end
+    def path
+      id.nil? ? "websites/"
+              : "websites/#{id}/"
+    end
 
-  def post
-    @post ||= Post.new(client: client, parent: self)
+    def post
+      @post ||= Post.new(client: client, parent: self)
+    end
   end
 end

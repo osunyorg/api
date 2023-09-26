@@ -1,2 +1,4 @@
-class OsunyApi::Error < StandardError
+module OsunyApi
+  class Error < StandardError
+  end
 end

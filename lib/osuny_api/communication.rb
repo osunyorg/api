@@ -1,11 +1,13 @@
-class OsunyApi::Communication < OsunyApi::Resource
-  def path
-    'communication/'
-  end
+module OsunyApi
+  class Communication < Resource
+    def path
+      'communication/'
+    end
 
-  def website(id = nil)
-    @website ||= Website.new(client: client, parent: self)
-    @website.id = id
-    @website
+    def website(id = nil)
+      @website ||= Website.new(client: client, parent: self)
+      @website.id = id
+      @website
+    end
   end
 end
