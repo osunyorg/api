@@ -7,6 +7,7 @@ require_relative "osuny_api/version"
 require_relative "osuny_api/resource"
 require_relative "osuny_api/communication"
 require_relative "osuny_api/communication/website"
+require_relative "osuny_api/communication/website/page"
 require_relative "osuny_api/communication/website/post"
 
 module OsunyApi
