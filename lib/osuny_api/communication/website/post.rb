@@ -5,11 +5,8 @@ module OsunyApi
       'posts/'
     end
 
-    def import(migration_identifier, data)
-      client.post "#{full_path}import", {
-        migration_identifier: migration_identifier,
-        post: data
-      }
+    def import(post)
+      client.post "#{full_path}import", { post: post }
     end
   end
 end
