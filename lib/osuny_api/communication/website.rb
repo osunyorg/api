@@ -10,5 +10,9 @@ module OsunyApi
     def post
       @post ||= Post.new(client: client, parent: self)
     end
+
+    def page
+      @page ||= Page.new(client: client, parent: self)
+    end
   end
 end
