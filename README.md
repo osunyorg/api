@@ -16,14 +16,14 @@ If bundler is not being used to manage dependencies, install the gem by executin
 osuny = OsunyApi.new  host: 'https://instance.osuny.org',
                       token: 'real_token'
 
-migration_identifier = "identifiant-unique"
 post = {
+  migration_identifier: "identifiant-unique"
   title: 'Titre importé'
 }
 osuny.communication
      .website('real_website_id')
      .post
-     .import(migration_identifier, post)
+     .import(post)
 ```
 ## License
 
