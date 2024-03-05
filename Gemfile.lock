@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    osuny_api (0.2.5)
+    osuny_api (0.2.6)
       httparty
 
 GEM

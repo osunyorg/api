@@ -9,12 +9,12 @@ Gem::Specification.new do |spec|
   spec.email = ["contact@arnaudlevy.com", "sebastien.gaya@gmail.com"]
 
   spec.summary = "Gem Ruby pour l'API Osuny"
-  spec.homepage = "https://www.github.com/noesya/osuny_api"
+  spec.homepage = "https://www.github.com/osunyorg/api"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://www.github.com/noesya/osuny_api"
+  spec.metadata["source_code_uri"] = "https://www.github.com/osunyorg/api"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
