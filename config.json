@@ -1,0 +1,10 @@
+{
+  "gemVersion": "1.0.0",
+  "moduleName": "OsunyApi",
+  "gemLicense": "MIT",
+  "gemName": "osuny_api",
+  "gemAuthors": ["Arnaud Levy", "Sébastien Gaya"],
+  "gemAuthorsEmail": ["contact@arnaudlevy.com", "sebastien.gaya@gmail.com"],
+  "gemDescription": "Gem Ruby pour l'API Osuny",
+  "gemHomepage": "https://www.github.com/osunyorg/api"
+}
