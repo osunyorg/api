@@ -18,11 +18,11 @@ Gem::Specification.new do |s|
   s.name        = "osuny_api"
   s.version     = OsunyApi::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Swagger-Codegen"]
-  s.email       = [""]
+  s.authors     = ["Arnaud Levy", "Sébastien Gaya"]
+  s.email       = ["contact@arnaudlevy.com", "sebastien.gaya@gmail.com"]
   s.homepage    = "https://www.github.com/osunyorg/api"
   s.summary     = "Osuny Ruby Gem"
-  s.description = "Gem Ruby pour l&#x27;API Osuny"
+  s.description = "Ruby Gem for the Osuny API"
   s.license     = 'MIT'
   s.required_ruby_version = ">= 1.9"
 
