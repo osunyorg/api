@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**university_organizations_upsert_post**](UniversityOrganizationApi.md#university_organizations_upsert_post) | **POST** /university/organizations/upsert | Upsert organizations
 
 # **university_organizations_get**
-> Array&lt;UniversityOrganization&gt; university_organizations_get
+> Array&lt;UniversityOrganization&gt; university_organizations_get(opts)
 
 Lists organizations
 
@@ -29,10 +29,14 @@ OsunyApi.configure do |config|
 end
 
 api_instance = OsunyApi::UniversityOrganizationApi.new
+opts = { 
+  page_num: 1, # Integer | Page number
+  per_page: 10000 # Integer | Number of items per page
+}
 
 begin
   #Lists organizations
-  result = api_instance.university_organizations_get
+  result = api_instance.university_organizations_get(opts)
   p result
 rescue OsunyApi::ApiError => e
   puts "Exception when calling UniversityOrganizationApi->university_organizations_get: #{e}"
@@ -40,7 +44,11 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page_num** | **Integer**| Page number | [optional] [default to 1]
+ **per_page** | **Integer**| Number of items per page | [optional] [default to 10000]
 
 ### Return type
 

@@ -11,5 +11,7 @@ Name | Type | Description | Notes
 **option_link** | **BOOLEAN** |  | [optional] 
 **option_logo** | **BOOLEAN** |  | [optional] 
 **option_summary** | **BOOLEAN** |  | [optional] 
+**option_address** | **BOOLEAN** |  | [optional] 
+**option_filters** | **BOOLEAN** |  | [optional] 
 **elements** | [**Array&lt;CommunicationBlockOrganizationsDataElements&gt;**](CommunicationBlockOrganizationsDataElements.md) |  | [optional] 
 

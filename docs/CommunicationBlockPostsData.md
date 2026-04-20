@@ -14,5 +14,5 @@ Name | Type | Description | Notes
 **option_reading_time** | **BOOLEAN** |  | [optional] 
 **option_subtitle** | **BOOLEAN** |  | [optional] 
 **option_summary** | **BOOLEAN** |  | [optional] 
-**elements** | [**Array&lt;CommunicationBlockLocationsDataElements&gt;**](CommunicationBlockLocationsDataElements.md) |  | [optional] 
+**elements** | [**Array&lt;CommunicationBlockProgramsDataElements&gt;**](CommunicationBlockProgramsDataElements.md) |  | [optional] 
 

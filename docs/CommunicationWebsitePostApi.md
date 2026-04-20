@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**communication_websites_website_id_posts_upsert_post**](CommunicationWebsitePostApi.md#communication_websites_website_id_posts_upsert_post) | **POST** /communication/websites/{website_id}/posts/upsert | Upsert posts
 
 # **communication_websites_website_id_posts_get**
-> Array&lt;CommunicationWebsitePost&gt; communication_websites_website_id_posts_get(website_id)
+> Array&lt;CommunicationWebsitePost&gt; communication_websites_website_id_posts_get(website_id, opts)
 
 Lists a website's posts
 
@@ -30,11 +30,14 @@ end
 
 api_instance = OsunyApi::CommunicationWebsitePostApi.new
 website_id = 'website_id_example' # String | Website identifier
-
+opts = { 
+  page_num: 1, # Integer | Page number
+  per_page: 10000 # Integer | Number of items per page
+}
 
 begin
   #Lists a website's posts
-  result = api_instance.communication_websites_website_id_posts_get(website_id)
+  result = api_instance.communication_websites_website_id_posts_get(website_id, opts)
   p result
 rescue OsunyApi::ApiError => e
   puts "Exception when calling CommunicationWebsitePostApi->communication_websites_website_id_posts_get: #{e}"
@@ -46,6 +49,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **website_id** | **String**| Website identifier | 
+ **page_num** | **Integer**| Page number | [optional] [default to 1]
+ **per_page** | **Integer**| Number of items per page | [optional] [default to 10000]
 
 ### Return type
 

@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **migration_identifier** | **String** |  | [optional] 
 **kind** | **String** |  | [optional] 
-**active** | **BOOLEAN** |  | [optional] 
 **email** | **String** |  | [optional] 
 **phone** | **String** |  | [optional] 
 **address** | **String** |  | [optional] 

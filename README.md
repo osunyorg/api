@@ -60,10 +60,14 @@ OsunyApi.configure do |config|
 end
 
 api_instance = OsunyApi::CommunicationWebsiteApi.new
+opts = {
+  page_num: 1, # Integer | Page number
+  per_page: 10000 # Integer | Number of items per page
+}
 
 begin
   #Lists the websites
-  result = api_instance.communication_websites_get
+  result = api_instance.communication_websites_get(opts)
   p result
 rescue OsunyApi::ApiError => e
   puts "Exception when calling CommunicationWebsiteApi->communication_websites_get: #{e}"
@@ -97,11 +101,14 @@ end
 
 api_instance = OsunyApi::CommunicationWebsiteAgendaCategoryApi.new
 website_id = 'website_id_example' # String | Website identifier
-
+opts = {
+  page_num: 1, # Integer | Page number
+  per_page: 10000 # Integer | Number of items per page
+}
 
 begin
   #Lists a website's agenda categories
-  result = api_instance.communication_websites_website_id_agenda_categories_get(website_id)
+  result = api_instance.communication_websites_website_id_agenda_categories_get(website_id, opts)
   p result
 rescue OsunyApi::ApiError => e
   puts "Exception when calling CommunicationWebsiteAgendaCategoryApi->communication_websites_website_id_agenda_categories_get: #{e}"
@@ -155,8 +162,8 @@ end
 api_instance = OsunyApi::CommunicationWebsiteAgendaCategoryApi.new
 website_id = 'website_id_example' # String | Website identifier
 id = 'id_example' # String | Category identifier
-opts = { 
-  body: OsunyApi::CategoriesIdBody.new # CategoriesIdBody | 
+opts = {
+  body: OsunyApi::CategoriesIdBody.new # CategoriesIdBody |
 }
 
 begin
@@ -175,8 +182,8 @@ end
 
 api_instance = OsunyApi::CommunicationWebsiteAgendaCategoryApi.new
 website_id = 'website_id_example' # String | Website identifier
-opts = { 
-  body: OsunyApi::AgendaCategoriesBody.new # AgendaCategoriesBody | 
+opts = {
+  body: OsunyApi::AgendaCategoriesBody.new # AgendaCategoriesBody |
 }
 
 begin
@@ -195,8 +202,8 @@ end
 
 api_instance = OsunyApi::CommunicationWebsiteAgendaCategoryApi.new
 website_id = 'website_id_example' # String | Website identifier
-opts = { 
-  body: OsunyApi::CategoriesUpsertBody.new # CategoriesUpsertBody | 
+opts = {
+  body: OsunyApi::CategoriesUpsertBody.new # CategoriesUpsertBody |
 }
 
 begin
@@ -215,11 +222,14 @@ end
 
 api_instance = OsunyApi::CommunicationWebsiteAgendaEventApi.new
 website_id = 'website_id_example' # String | Website identifier
-
+opts = {
+  page_num: 1, # Integer | Page number
+  per_page: 10000 # Integer | Number of items per page
+}
 
 begin
   #Lists a website's events
-  result = api_instance.communication_websites_website_id_agenda_events_get(website_id)
+  result = api_instance.communication_websites_website_id_agenda_events_get(website_id, opts)
   p result
 rescue OsunyApi::ApiError => e
   puts "Exception when calling CommunicationWebsiteAgendaEventApi->communication_websites_website_id_agenda_events_get: #{e}"
@@ -273,8 +283,8 @@ end
 api_instance = OsunyApi::CommunicationWebsiteAgendaEventApi.new
 website_id = 'website_id_example' # String | Website identifier
 id = 'id_example' # String | Event identifier
-opts = { 
-  body: OsunyApi::EventsIdBody.new # EventsIdBody | 
+opts = {
+  body: OsunyApi::EventsIdBody.new # EventsIdBody |
 }
 
 begin
@@ -293,8 +303,8 @@ end
 
 api_instance = OsunyApi::CommunicationWebsiteAgendaEventApi.new
 website_id = 'website_id_example' # String | Website identifier
-opts = { 
-  body: OsunyApi::AgendaEventsBody.new # AgendaEventsBody | 
+opts = {
+  body: OsunyApi::AgendaEventsBody.new # AgendaEventsBody |
 }
 
 begin
@@ -313,8 +323,8 @@ end
 
 api_instance = OsunyApi::CommunicationWebsiteAgendaEventApi.new
 website_id = 'website_id_example' # String | Website identifier
-opts = { 
-  body: OsunyApi::EventsUpsertBody.new # EventsUpsertBody | 
+opts = {
+  body: OsunyApi::EventsUpsertBody.new # EventsUpsertBody |
 }
 
 begin
@@ -331,13 +341,36 @@ OsunyApi.configure do |config|
   #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
 end
 
+api_instance = OsunyApi::CommunicationWebsiteMediaApi.new
+opts = {
+  url: 'url_example', # String |
+  file: 'file_example' # String |
+}
+
+begin
+  #Create a media
+  api_instance.communication_medias_post(opts)
+rescue OsunyApi::ApiError => e
+  puts "Exception when calling CommunicationWebsiteMediaApi->communication_medias_post: #{e}"
+end
+# Setup authorization
+OsunyApi.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['X-Osuny-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
+end
+
 api_instance = OsunyApi::CommunicationWebsitePageApi.new
 website_id = 'website_id_example' # String | Website identifier
-
+opts = {
+  page_num: 1, # Integer | Page number
+  per_page: 10000 # Integer | Number of items per page
+}
 
 begin
   #Lists a website's pages
-  result = api_instance.communication_websites_website_id_pages_get(website_id)
+  result = api_instance.communication_websites_website_id_pages_get(website_id, opts)
   p result
 rescue OsunyApi::ApiError => e
   puts "Exception when calling CommunicationWebsitePageApi->communication_websites_website_id_pages_get: #{e}"
@@ -391,8 +424,8 @@ end
 api_instance = OsunyApi::CommunicationWebsitePageApi.new
 website_id = 'website_id_example' # String | Website identifier
 id = 'id_example' # String | Page identifier
-opts = { 
-  body: OsunyApi::PagesIdBody.new # PagesIdBody | 
+opts = {
+  body: OsunyApi::PagesIdBody.new # PagesIdBody |
 }
 
 begin
@@ -411,8 +444,8 @@ end
 
 api_instance = OsunyApi::CommunicationWebsitePageApi.new
 website_id = 'website_id_example' # String | Website identifier
-opts = { 
-  body: OsunyApi::WebsiteIdPagesBody.new # WebsiteIdPagesBody | 
+opts = {
+  body: OsunyApi::WebsiteIdPagesBody.new # WebsiteIdPagesBody |
 }
 
 begin
@@ -431,8 +464,8 @@ end
 
 api_instance = OsunyApi::CommunicationWebsitePageApi.new
 website_id = 'website_id_example' # String | Website identifier
-opts = { 
-  body: OsunyApi::PagesUpsertBody.new # PagesUpsertBody | 
+opts = {
+  body: OsunyApi::PagesUpsertBody.new # PagesUpsertBody |
 }
 
 begin
@@ -451,11 +484,14 @@ end
 
 api_instance = OsunyApi::CommunicationWebsitePageCategoryApi.new
 website_id = 'website_id_example' # String | Website identifier
-
+opts = {
+  page_num: 1, # Integer | Page number
+  per_page: 10000 # Integer | Number of items per page
+}
 
 begin
   #Lists a website's page categories
-  result = api_instance.communication_websites_website_id_pages_categories_get(website_id)
+  result = api_instance.communication_websites_website_id_pages_categories_get(website_id, opts)
   p result
 rescue OsunyApi::ApiError => e
   puts "Exception when calling CommunicationWebsitePageCategoryApi->communication_websites_website_id_pages_categories_get: #{e}"
@@ -509,8 +545,8 @@ end
 api_instance = OsunyApi::CommunicationWebsitePageCategoryApi.new
 website_id = 'website_id_example' # String | Website identifier
 id = 'id_example' # String | Category identifier
-opts = { 
-  body: OsunyApi::CategoriesIdBody1.new # CategoriesIdBody1 | 
+opts = {
+  body: OsunyApi::CategoriesIdBody1.new # CategoriesIdBody1 |
 }
 
 begin
@@ -529,8 +565,8 @@ end
 
 api_instance = OsunyApi::CommunicationWebsitePageCategoryApi.new
 website_id = 'website_id_example' # String | Website identifier
-opts = { 
-  body: OsunyApi::PagesCategoriesBody.new # PagesCategoriesBody | 
+opts = {
+  body: OsunyApi::PagesCategoriesBody.new # PagesCategoriesBody |
 }
 
 begin
@@ -549,8 +585,8 @@ end
 
 api_instance = OsunyApi::CommunicationWebsitePageCategoryApi.new
 website_id = 'website_id_example' # String | Website identifier
-opts = { 
-  body: OsunyApi::CategoriesUpsertBody1.new # CategoriesUpsertBody1 | 
+opts = {
+  body: OsunyApi::CategoriesUpsertBody1.new # CategoriesUpsertBody1 |
 }
 
 begin
@@ -567,13 +603,258 @@ OsunyApi.configure do |config|
   #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
 end
 
-api_instance = OsunyApi::CommunicationWebsitePostApi.new
+api_instance = OsunyApi::CommunicationWebsitePortfolioCategoryApi.new
 website_id = 'website_id_example' # String | Website identifier
+opts = {
+  page_num: 1, # Integer | Page number
+  per_page: 10000 # Integer | Number of items per page
+}
+
+begin
+  #Lists a website's portfolio categories
+  result = api_instance.communication_websites_website_id_portfolio_categories_get(website_id, opts)
+  p result
+rescue OsunyApi::ApiError => e
+  puts "Exception when calling CommunicationWebsitePortfolioCategoryApi->communication_websites_website_id_portfolio_categories_get: #{e}"
+end
+# Setup authorization
+OsunyApi.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['X-Osuny-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
+end
+
+api_instance = OsunyApi::CommunicationWebsitePortfolioCategoryApi.new
+website_id = 'website_id_example' # String | Website identifier
+id = 'id_example' # String | Category identifier
 
 
 begin
+  #Deletes a portfolio category
+  api_instance.communication_websites_website_id_portfolio_categories_id_delete(website_id, id)
+rescue OsunyApi::ApiError => e
+  puts "Exception when calling CommunicationWebsitePortfolioCategoryApi->communication_websites_website_id_portfolio_categories_id_delete: #{e}"
+end
+# Setup authorization
+OsunyApi.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['X-Osuny-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
+end
+
+api_instance = OsunyApi::CommunicationWebsitePortfolioCategoryApi.new
+website_id = 'website_id_example' # String | Website identifier
+id = 'id_example' # String | Category identifier
+
+
+begin
+  #Shows a portfolio category
+  api_instance.communication_websites_website_id_portfolio_categories_id_get(website_id, id)
+rescue OsunyApi::ApiError => e
+  puts "Exception when calling CommunicationWebsitePortfolioCategoryApi->communication_websites_website_id_portfolio_categories_id_get: #{e}"
+end
+# Setup authorization
+OsunyApi.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['X-Osuny-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
+end
+
+api_instance = OsunyApi::CommunicationWebsitePortfolioCategoryApi.new
+website_id = 'website_id_example' # String | Website identifier
+id = 'id_example' # String | Category identifier
+opts = {
+  body: OsunyApi::CategoriesIdBody2.new # CategoriesIdBody2 |
+}
+
+begin
+  #Updates a portfolio category
+  api_instance.communication_websites_website_id_portfolio_categories_id_patch(website_id, id, opts)
+rescue OsunyApi::ApiError => e
+  puts "Exception when calling CommunicationWebsitePortfolioCategoryApi->communication_websites_website_id_portfolio_categories_id_patch: #{e}"
+end
+# Setup authorization
+OsunyApi.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['X-Osuny-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
+end
+
+api_instance = OsunyApi::CommunicationWebsitePortfolioCategoryApi.new
+website_id = 'website_id_example' # String | Website identifier
+opts = {
+  body: OsunyApi::PortfolioCategoriesBody.new # PortfolioCategoriesBody |
+}
+
+begin
+  #Creates a portfolio category
+  api_instance.communication_websites_website_id_portfolio_categories_post(website_id, opts)
+rescue OsunyApi::ApiError => e
+  puts "Exception when calling CommunicationWebsitePortfolioCategoryApi->communication_websites_website_id_portfolio_categories_post: #{e}"
+end
+# Setup authorization
+OsunyApi.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['X-Osuny-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
+end
+
+api_instance = OsunyApi::CommunicationWebsitePortfolioCategoryApi.new
+website_id = 'website_id_example' # String | Website identifier
+opts = {
+  body: OsunyApi::CategoriesUpsertBody2.new # CategoriesUpsertBody2 |
+}
+
+begin
+  #Upsert portfolio categories
+  api_instance.communication_websites_website_id_portfolio_categories_upsert_post(website_id, opts)
+rescue OsunyApi::ApiError => e
+  puts "Exception when calling CommunicationWebsitePortfolioCategoryApi->communication_websites_website_id_portfolio_categories_upsert_post: #{e}"
+end
+# Setup authorization
+OsunyApi.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['X-Osuny-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
+end
+
+api_instance = OsunyApi::CommunicationWebsitePortfolioProjectApi.new
+website_id = 'website_id_example' # String | Website identifier
+opts = {
+  page_num: 1, # Integer | Page number
+  per_page: 10000 # Integer | Number of items per page
+}
+
+begin
+  #Lists a website's projects
+  result = api_instance.communication_websites_website_id_portfolio_projects_get(website_id, opts)
+  p result
+rescue OsunyApi::ApiError => e
+  puts "Exception when calling CommunicationWebsitePortfolioProjectApi->communication_websites_website_id_portfolio_projects_get: #{e}"
+end
+# Setup authorization
+OsunyApi.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['X-Osuny-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
+end
+
+api_instance = OsunyApi::CommunicationWebsitePortfolioProjectApi.new
+website_id = 'website_id_example' # String | Website identifier
+id = 'id_example' # String | Project identifier
+
+
+begin
+  #Deletes a project
+  api_instance.communication_websites_website_id_portfolio_projects_id_delete(website_id, id)
+rescue OsunyApi::ApiError => e
+  puts "Exception when calling CommunicationWebsitePortfolioProjectApi->communication_websites_website_id_portfolio_projects_id_delete: #{e}"
+end
+# Setup authorization
+OsunyApi.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['X-Osuny-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
+end
+
+api_instance = OsunyApi::CommunicationWebsitePortfolioProjectApi.new
+website_id = 'website_id_example' # String | Website identifier
+id = 'id_example' # String | Project identifier
+
+
+begin
+  #Shows a project
+  api_instance.communication_websites_website_id_portfolio_projects_id_get(website_id, id)
+rescue OsunyApi::ApiError => e
+  puts "Exception when calling CommunicationWebsitePortfolioProjectApi->communication_websites_website_id_portfolio_projects_id_get: #{e}"
+end
+# Setup authorization
+OsunyApi.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['X-Osuny-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
+end
+
+api_instance = OsunyApi::CommunicationWebsitePortfolioProjectApi.new
+website_id = 'website_id_example' # String | Website identifier
+id = 'id_example' # String | Project identifier
+opts = {
+  body: OsunyApi::ProjectsIdBody.new # ProjectsIdBody |
+}
+
+begin
+  #Updates a project
+  api_instance.communication_websites_website_id_portfolio_projects_id_patch(website_id, id, opts)
+rescue OsunyApi::ApiError => e
+  puts "Exception when calling CommunicationWebsitePortfolioProjectApi->communication_websites_website_id_portfolio_projects_id_patch: #{e}"
+end
+# Setup authorization
+OsunyApi.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['X-Osuny-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
+end
+
+api_instance = OsunyApi::CommunicationWebsitePortfolioProjectApi.new
+website_id = 'website_id_example' # String | Website identifier
+opts = {
+  body: OsunyApi::PortfolioProjectsBody.new # PortfolioProjectsBody |
+}
+
+begin
+  #Creates a project
+  api_instance.communication_websites_website_id_portfolio_projects_post(website_id, opts)
+rescue OsunyApi::ApiError => e
+  puts "Exception when calling CommunicationWebsitePortfolioProjectApi->communication_websites_website_id_portfolio_projects_post: #{e}"
+end
+# Setup authorization
+OsunyApi.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['X-Osuny-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
+end
+
+api_instance = OsunyApi::CommunicationWebsitePortfolioProjectApi.new
+website_id = 'website_id_example' # String | Website identifier
+opts = {
+  body: OsunyApi::ProjectsUpsertBody.new # ProjectsUpsertBody |
+}
+
+begin
+  #Upsert projects
+  api_instance.communication_websites_website_id_portfolio_projects_upsert_post(website_id, opts)
+rescue OsunyApi::ApiError => e
+  puts "Exception when calling CommunicationWebsitePortfolioProjectApi->communication_websites_website_id_portfolio_projects_upsert_post: #{e}"
+end
+# Setup authorization
+OsunyApi.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['X-Osuny-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
+end
+
+api_instance = OsunyApi::CommunicationWebsitePostApi.new
+website_id = 'website_id_example' # String | Website identifier
+opts = {
+  page_num: 1, # Integer | Page number
+  per_page: 10000 # Integer | Number of items per page
+}
+
+begin
   #Lists a website's posts
-  result = api_instance.communication_websites_website_id_posts_get(website_id)
+  result = api_instance.communication_websites_website_id_posts_get(website_id, opts)
   p result
 rescue OsunyApi::ApiError => e
   puts "Exception when calling CommunicationWebsitePostApi->communication_websites_website_id_posts_get: #{e}"
@@ -627,8 +908,8 @@ end
 api_instance = OsunyApi::CommunicationWebsitePostApi.new
 website_id = 'website_id_example' # String | Website identifier
 id = 'id_example' # String | Post identifier
-opts = { 
-  body: OsunyApi::PostsIdBody.new # PostsIdBody | 
+opts = {
+  body: OsunyApi::PostsIdBody.new # PostsIdBody |
 }
 
 begin
@@ -647,8 +928,8 @@ end
 
 api_instance = OsunyApi::CommunicationWebsitePostApi.new
 website_id = 'website_id_example' # String | Website identifier
-opts = { 
-  body: OsunyApi::WebsiteIdPostsBody.new # WebsiteIdPostsBody | 
+opts = {
+  body: OsunyApi::WebsiteIdPostsBody.new # WebsiteIdPostsBody |
 }
 
 begin
@@ -667,8 +948,8 @@ end
 
 api_instance = OsunyApi::CommunicationWebsitePostApi.new
 website_id = 'website_id_example' # String | Website identifier
-opts = { 
-  body: OsunyApi::PostsUpsertBody.new # PostsUpsertBody | 
+opts = {
+  body: OsunyApi::PostsUpsertBody.new # PostsUpsertBody |
 }
 
 begin
@@ -685,11 +966,136 @@ OsunyApi.configure do |config|
   #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
 end
 
+api_instance = OsunyApi::CommunicationWebsitePostCategoryApi.new
+website_id = 'website_id_example' # String | Website identifier
+opts = {
+  page_num: 1, # Integer | Page number
+  per_page: 10000 # Integer | Number of items per page
+}
+
+begin
+  #Lists a website's post categories
+  result = api_instance.communication_websites_website_id_posts_categories_get(website_id, opts)
+  p result
+rescue OsunyApi::ApiError => e
+  puts "Exception when calling CommunicationWebsitePostCategoryApi->communication_websites_website_id_posts_categories_get: #{e}"
+end
+# Setup authorization
+OsunyApi.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['X-Osuny-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
+end
+
+api_instance = OsunyApi::CommunicationWebsitePostCategoryApi.new
+website_id = 'website_id_example' # String | Website identifier
+id = 'id_example' # String | Category identifier
+
+
+begin
+  #Deletes a post category
+  api_instance.communication_websites_website_id_posts_categories_id_delete(website_id, id)
+rescue OsunyApi::ApiError => e
+  puts "Exception when calling CommunicationWebsitePostCategoryApi->communication_websites_website_id_posts_categories_id_delete: #{e}"
+end
+# Setup authorization
+OsunyApi.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['X-Osuny-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
+end
+
+api_instance = OsunyApi::CommunicationWebsitePostCategoryApi.new
+website_id = 'website_id_example' # String | Website identifier
+id = 'id_example' # String | Category identifier
+
+
+begin
+  #Shows a post category
+  api_instance.communication_websites_website_id_posts_categories_id_get(website_id, id)
+rescue OsunyApi::ApiError => e
+  puts "Exception when calling CommunicationWebsitePostCategoryApi->communication_websites_website_id_posts_categories_id_get: #{e}"
+end
+# Setup authorization
+OsunyApi.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['X-Osuny-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
+end
+
+api_instance = OsunyApi::CommunicationWebsitePostCategoryApi.new
+website_id = 'website_id_example' # String | Website identifier
+id = 'id_example' # String | Category identifier
+opts = {
+  body: OsunyApi::CategoriesIdBody3.new # CategoriesIdBody3 |
+}
+
+begin
+  #Updates a post category
+  api_instance.communication_websites_website_id_posts_categories_id_patch(website_id, id, opts)
+rescue OsunyApi::ApiError => e
+  puts "Exception when calling CommunicationWebsitePostCategoryApi->communication_websites_website_id_posts_categories_id_patch: #{e}"
+end
+# Setup authorization
+OsunyApi.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['X-Osuny-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
+end
+
+api_instance = OsunyApi::CommunicationWebsitePostCategoryApi.new
+website_id = 'website_id_example' # String | Website identifier
+opts = {
+  body: OsunyApi::PostsCategoriesBody.new # PostsCategoriesBody |
+}
+
+begin
+  #Creates a post category
+  api_instance.communication_websites_website_id_posts_categories_post(website_id, opts)
+rescue OsunyApi::ApiError => e
+  puts "Exception when calling CommunicationWebsitePostCategoryApi->communication_websites_website_id_posts_categories_post: #{e}"
+end
+# Setup authorization
+OsunyApi.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['X-Osuny-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
+end
+
+api_instance = OsunyApi::CommunicationWebsitePostCategoryApi.new
+website_id = 'website_id_example' # String | Website identifier
+opts = {
+  body: OsunyApi::CategoriesUpsertBody3.new # CategoriesUpsertBody3 |
+}
+
+begin
+  #Upsert post categories
+  api_instance.communication_websites_website_id_posts_categories_upsert_post(website_id, opts)
+rescue OsunyApi::ApiError => e
+  puts "Exception when calling CommunicationWebsitePostCategoryApi->communication_websites_website_id_posts_categories_upsert_post: #{e}"
+end
+# Setup authorization
+OsunyApi.configure do |config|
+  # Configure API key authorization: api_key
+  config.api_key['X-Osuny-Token'] = 'YOUR API KEY'
+  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
+  #config.api_key_prefix['X-Osuny-Token'] = 'Bearer'
+end
+
 api_instance = OsunyApi::UniversityOrganizationApi.new
+opts = {
+  page_num: 1, # Integer | Page number
+  per_page: 10000 # Integer | Number of items per page
+}
 
 begin
   #Lists organizations
-  result = api_instance.university_organizations_get
+  result = api_instance.university_organizations_get(opts)
   p result
 rescue OsunyApi::ApiError => e
   puts "Exception when calling UniversityOrganizationApi->university_organizations_get: #{e}"
@@ -740,8 +1146,8 @@ end
 
 api_instance = OsunyApi::UniversityOrganizationApi.new
 id = 'id_example' # String | Organization identifier
-opts = { 
-  body: OsunyApi::OrganizationsIdBody.new # OrganizationsIdBody | 
+opts = {
+  body: OsunyApi::OrganizationsIdBody.new # OrganizationsIdBody |
 }
 
 begin
@@ -759,8 +1165,8 @@ OsunyApi.configure do |config|
 end
 
 api_instance = OsunyApi::UniversityOrganizationApi.new
-opts = { 
-  body: OsunyApi::UniversityOrganizationsBody.new # UniversityOrganizationsBody | 
+opts = {
+  body: OsunyApi::UniversityOrganizationsBody.new # UniversityOrganizationsBody |
 }
 
 begin
@@ -778,8 +1184,8 @@ OsunyApi.configure do |config|
 end
 
 api_instance = OsunyApi::UniversityOrganizationApi.new
-opts = { 
-  body: OsunyApi::OrganizationsUpsertBody.new # OrganizationsUpsertBody | 
+opts = {
+  body: OsunyApi::OrganizationsUpsertBody.new # OrganizationsUpsertBody |
 }
 
 begin
@@ -797,10 +1203,14 @@ OsunyApi.configure do |config|
 end
 
 api_instance = OsunyApi::UniversityOrganizationCategoryApi.new
+opts = {
+  page_num: 1, # Integer | Page number
+  per_page: 10000 # Integer | Number of items per page
+}
 
 begin
   #Lists organization categories
-  result = api_instance.university_organizations_categories_get
+  result = api_instance.university_organizations_categories_get(opts)
   p result
 rescue OsunyApi::ApiError => e
   puts "Exception when calling UniversityOrganizationCategoryApi->university_organizations_categories_get: #{e}"
@@ -851,8 +1261,8 @@ end
 
 api_instance = OsunyApi::UniversityOrganizationCategoryApi.new
 id = 'id_example' # String | Category identifier
-opts = { 
-  body: OsunyApi::CategoriesIdBody2.new # CategoriesIdBody2 | 
+opts = {
+  body: OsunyApi::CategoriesIdBody4.new # CategoriesIdBody4 |
 }
 
 begin
@@ -870,8 +1280,8 @@ OsunyApi.configure do |config|
 end
 
 api_instance = OsunyApi::UniversityOrganizationCategoryApi.new
-opts = { 
-  body: OsunyApi::OrganizationsCategoriesBody.new # OrganizationsCategoriesBody | 
+opts = {
+  body: OsunyApi::OrganizationsCategoriesBody.new # OrganizationsCategoriesBody |
 }
 
 begin
@@ -889,8 +1299,8 @@ OsunyApi.configure do |config|
 end
 
 api_instance = OsunyApi::UniversityOrganizationCategoryApi.new
-opts = { 
-  body: OsunyApi::CategoriesUpsertBody2.new # CategoriesUpsertBody2 | 
+opts = {
+  body: OsunyApi::CategoriesUpsertBody4.new # CategoriesUpsertBody4 |
 }
 
 begin
@@ -921,6 +1331,7 @@ Class | Method | HTTP request | Description
 *OsunyApi::CommunicationWebsiteAgendaEventApi* | [**communication_websites_website_id_agenda_events_id_patch**](docs/CommunicationWebsiteAgendaEventApi.md#communication_websites_website_id_agenda_events_id_patch) | **PATCH** /communication/websites/{website_id}/agenda/events/{id} | Updates an event
 *OsunyApi::CommunicationWebsiteAgendaEventApi* | [**communication_websites_website_id_agenda_events_post**](docs/CommunicationWebsiteAgendaEventApi.md#communication_websites_website_id_agenda_events_post) | **POST** /communication/websites/{website_id}/agenda/events | Creates an event
 *OsunyApi::CommunicationWebsiteAgendaEventApi* | [**communication_websites_website_id_agenda_events_upsert_post**](docs/CommunicationWebsiteAgendaEventApi.md#communication_websites_website_id_agenda_events_upsert_post) | **POST** /communication/websites/{website_id}/agenda/events/upsert | Upsert events
+*OsunyApi::CommunicationWebsiteMediaApi* | [**communication_medias_post**](docs/CommunicationWebsiteMediaApi.md#communication_medias_post) | **POST** /communication/medias | Create a media
 *OsunyApi::CommunicationWebsitePageApi* | [**communication_websites_website_id_pages_get**](docs/CommunicationWebsitePageApi.md#communication_websites_website_id_pages_get) | **GET** /communication/websites/{website_id}/pages | Lists a website's pages
 *OsunyApi::CommunicationWebsitePageApi* | [**communication_websites_website_id_pages_id_delete**](docs/CommunicationWebsitePageApi.md#communication_websites_website_id_pages_id_delete) | **DELETE** /communication/websites/{website_id}/pages/{id} | Deletes a page
 *OsunyApi::CommunicationWebsitePageApi* | [**communication_websites_website_id_pages_id_get**](docs/CommunicationWebsitePageApi.md#communication_websites_website_id_pages_id_get) | **GET** /communication/websites/{website_id}/pages/{id} | Shows a page
@@ -933,12 +1344,30 @@ Class | Method | HTTP request | Description
 *OsunyApi::CommunicationWebsitePageCategoryApi* | [**communication_websites_website_id_pages_categories_id_patch**](docs/CommunicationWebsitePageCategoryApi.md#communication_websites_website_id_pages_categories_id_patch) | **PATCH** /communication/websites/{website_id}/pages/categories/{id} | Updates a page category
 *OsunyApi::CommunicationWebsitePageCategoryApi* | [**communication_websites_website_id_pages_categories_post**](docs/CommunicationWebsitePageCategoryApi.md#communication_websites_website_id_pages_categories_post) | **POST** /communication/websites/{website_id}/pages/categories | Creates a page category
 *OsunyApi::CommunicationWebsitePageCategoryApi* | [**communication_websites_website_id_pages_categories_upsert_post**](docs/CommunicationWebsitePageCategoryApi.md#communication_websites_website_id_pages_categories_upsert_post) | **POST** /communication/websites/{website_id}/pages/categories/upsert | Upsert page categories
+*OsunyApi::CommunicationWebsitePortfolioCategoryApi* | [**communication_websites_website_id_portfolio_categories_get**](docs/CommunicationWebsitePortfolioCategoryApi.md#communication_websites_website_id_portfolio_categories_get) | **GET** /communication/websites/{website_id}/portfolio/categories | Lists a website's portfolio categories
+*OsunyApi::CommunicationWebsitePortfolioCategoryApi* | [**communication_websites_website_id_portfolio_categories_id_delete**](docs/CommunicationWebsitePortfolioCategoryApi.md#communication_websites_website_id_portfolio_categories_id_delete) | **DELETE** /communication/websites/{website_id}/portfolio/categories/{id} | Deletes a portfolio category
+*OsunyApi::CommunicationWebsitePortfolioCategoryApi* | [**communication_websites_website_id_portfolio_categories_id_get**](docs/CommunicationWebsitePortfolioCategoryApi.md#communication_websites_website_id_portfolio_categories_id_get) | **GET** /communication/websites/{website_id}/portfolio/categories/{id} | Shows a portfolio category
+*OsunyApi::CommunicationWebsitePortfolioCategoryApi* | [**communication_websites_website_id_portfolio_categories_id_patch**](docs/CommunicationWebsitePortfolioCategoryApi.md#communication_websites_website_id_portfolio_categories_id_patch) | **PATCH** /communication/websites/{website_id}/portfolio/categories/{id} | Updates a portfolio category
+*OsunyApi::CommunicationWebsitePortfolioCategoryApi* | [**communication_websites_website_id_portfolio_categories_post**](docs/CommunicationWebsitePortfolioCategoryApi.md#communication_websites_website_id_portfolio_categories_post) | **POST** /communication/websites/{website_id}/portfolio/categories | Creates a portfolio category
+*OsunyApi::CommunicationWebsitePortfolioCategoryApi* | [**communication_websites_website_id_portfolio_categories_upsert_post**](docs/CommunicationWebsitePortfolioCategoryApi.md#communication_websites_website_id_portfolio_categories_upsert_post) | **POST** /communication/websites/{website_id}/portfolio/categories/upsert | Upsert portfolio categories
+*OsunyApi::CommunicationWebsitePortfolioProjectApi* | [**communication_websites_website_id_portfolio_projects_get**](docs/CommunicationWebsitePortfolioProjectApi.md#communication_websites_website_id_portfolio_projects_get) | **GET** /communication/websites/{website_id}/portfolio/projects | Lists a website's projects
+*OsunyApi::CommunicationWebsitePortfolioProjectApi* | [**communication_websites_website_id_portfolio_projects_id_delete**](docs/CommunicationWebsitePortfolioProjectApi.md#communication_websites_website_id_portfolio_projects_id_delete) | **DELETE** /communication/websites/{website_id}/portfolio/projects/{id} | Deletes a project
+*OsunyApi::CommunicationWebsitePortfolioProjectApi* | [**communication_websites_website_id_portfolio_projects_id_get**](docs/CommunicationWebsitePortfolioProjectApi.md#communication_websites_website_id_portfolio_projects_id_get) | **GET** /communication/websites/{website_id}/portfolio/projects/{id} | Shows a project
+*OsunyApi::CommunicationWebsitePortfolioProjectApi* | [**communication_websites_website_id_portfolio_projects_id_patch**](docs/CommunicationWebsitePortfolioProjectApi.md#communication_websites_website_id_portfolio_projects_id_patch) | **PATCH** /communication/websites/{website_id}/portfolio/projects/{id} | Updates a project
+*OsunyApi::CommunicationWebsitePortfolioProjectApi* | [**communication_websites_website_id_portfolio_projects_post**](docs/CommunicationWebsitePortfolioProjectApi.md#communication_websites_website_id_portfolio_projects_post) | **POST** /communication/websites/{website_id}/portfolio/projects | Creates a project
+*OsunyApi::CommunicationWebsitePortfolioProjectApi* | [**communication_websites_website_id_portfolio_projects_upsert_post**](docs/CommunicationWebsitePortfolioProjectApi.md#communication_websites_website_id_portfolio_projects_upsert_post) | **POST** /communication/websites/{website_id}/portfolio/projects/upsert | Upsert projects
 *OsunyApi::CommunicationWebsitePostApi* | [**communication_websites_website_id_posts_get**](docs/CommunicationWebsitePostApi.md#communication_websites_website_id_posts_get) | **GET** /communication/websites/{website_id}/posts | Lists a website's posts
 *OsunyApi::CommunicationWebsitePostApi* | [**communication_websites_website_id_posts_id_delete**](docs/CommunicationWebsitePostApi.md#communication_websites_website_id_posts_id_delete) | **DELETE** /communication/websites/{website_id}/posts/{id} | Deletes a post
 *OsunyApi::CommunicationWebsitePostApi* | [**communication_websites_website_id_posts_id_get**](docs/CommunicationWebsitePostApi.md#communication_websites_website_id_posts_id_get) | **GET** /communication/websites/{website_id}/posts/{id} | Shows a post
 *OsunyApi::CommunicationWebsitePostApi* | [**communication_websites_website_id_posts_id_patch**](docs/CommunicationWebsitePostApi.md#communication_websites_website_id_posts_id_patch) | **PATCH** /communication/websites/{website_id}/posts/{id} | Updates a post
 *OsunyApi::CommunicationWebsitePostApi* | [**communication_websites_website_id_posts_post**](docs/CommunicationWebsitePostApi.md#communication_websites_website_id_posts_post) | **POST** /communication/websites/{website_id}/posts | Creates a post
 *OsunyApi::CommunicationWebsitePostApi* | [**communication_websites_website_id_posts_upsert_post**](docs/CommunicationWebsitePostApi.md#communication_websites_website_id_posts_upsert_post) | **POST** /communication/websites/{website_id}/posts/upsert | Upsert posts
+*OsunyApi::CommunicationWebsitePostCategoryApi* | [**communication_websites_website_id_posts_categories_get**](docs/CommunicationWebsitePostCategoryApi.md#communication_websites_website_id_posts_categories_get) | **GET** /communication/websites/{website_id}/posts/categories | Lists a website's post categories
+*OsunyApi::CommunicationWebsitePostCategoryApi* | [**communication_websites_website_id_posts_categories_id_delete**](docs/CommunicationWebsitePostCategoryApi.md#communication_websites_website_id_posts_categories_id_delete) | **DELETE** /communication/websites/{website_id}/posts/categories/{id} | Deletes a post category
+*OsunyApi::CommunicationWebsitePostCategoryApi* | [**communication_websites_website_id_posts_categories_id_get**](docs/CommunicationWebsitePostCategoryApi.md#communication_websites_website_id_posts_categories_id_get) | **GET** /communication/websites/{website_id}/posts/categories/{id} | Shows a post category
+*OsunyApi::CommunicationWebsitePostCategoryApi* | [**communication_websites_website_id_posts_categories_id_patch**](docs/CommunicationWebsitePostCategoryApi.md#communication_websites_website_id_posts_categories_id_patch) | **PATCH** /communication/websites/{website_id}/posts/categories/{id} | Updates a post category
+*OsunyApi::CommunicationWebsitePostCategoryApi* | [**communication_websites_website_id_posts_categories_post**](docs/CommunicationWebsitePostCategoryApi.md#communication_websites_website_id_posts_categories_post) | **POST** /communication/websites/{website_id}/posts/categories | Creates a post category
+*OsunyApi::CommunicationWebsitePostCategoryApi* | [**communication_websites_website_id_posts_categories_upsert_post**](docs/CommunicationWebsitePostCategoryApi.md#communication_websites_website_id_posts_categories_upsert_post) | **POST** /communication/websites/{website_id}/posts/categories/upsert | Upsert post categories
 *OsunyApi::UniversityOrganizationApi* | [**university_organizations_get**](docs/UniversityOrganizationApi.md#university_organizations_get) | **GET** /university/organizations | Lists organizations
 *OsunyApi::UniversityOrganizationApi* | [**university_organizations_id_delete**](docs/UniversityOrganizationApi.md#university_organizations_id_delete) | **DELETE** /university/organizations/{id} | Deletes an organization
 *OsunyApi::UniversityOrganizationApi* | [**university_organizations_id_get**](docs/UniversityOrganizationApi.md#university_organizations_id_get) | **GET** /university/organizations/{id} | Shows an organization
@@ -959,20 +1388,24 @@ Class | Method | HTTP request | Description
  - [OsunyApi::CategoriesIdBody](docs/CategoriesIdBody.md)
  - [OsunyApi::CategoriesIdBody1](docs/CategoriesIdBody1.md)
  - [OsunyApi::CategoriesIdBody2](docs/CategoriesIdBody2.md)
+ - [OsunyApi::CategoriesIdBody3](docs/CategoriesIdBody3.md)
+ - [OsunyApi::CategoriesIdBody4](docs/CategoriesIdBody4.md)
  - [OsunyApi::CategoriesUpsertBody](docs/CategoriesUpsertBody.md)
  - [OsunyApi::CategoriesUpsertBody1](docs/CategoriesUpsertBody1.md)
  - [OsunyApi::CategoriesUpsertBody2](docs/CategoriesUpsertBody2.md)
+ - [OsunyApi::CategoriesUpsertBody3](docs/CategoriesUpsertBody3.md)
+ - [OsunyApi::CategoriesUpsertBody4](docs/CategoriesUpsertBody4.md)
  - [OsunyApi::CommunicationBlockAgenda](docs/CommunicationBlockAgenda.md)
  - [OsunyApi::CommunicationBlockAgendaData](docs/CommunicationBlockAgendaData.md)
  - [OsunyApi::CommunicationBlockAgendaDataElements](docs/CommunicationBlockAgendaDataElements.md)
  - [OsunyApi::CommunicationBlockCallToAction](docs/CommunicationBlockCallToAction.md)
  - [OsunyApi::CommunicationBlockCallToActionData](docs/CommunicationBlockCallToActionData.md)
  - [OsunyApi::CommunicationBlockCallToActionDataElements](docs/CommunicationBlockCallToActionDataElements.md)
- - [OsunyApi::CommunicationBlockCallToActionDataImage](docs/CommunicationBlockCallToActionDataImage.md)
  - [OsunyApi::CommunicationBlockCategories](docs/CommunicationBlockCategories.md)
  - [OsunyApi::CommunicationBlockCategoriesData](docs/CommunicationBlockCategoriesData.md)
  - [OsunyApi::CommunicationBlockChapter](docs/CommunicationBlockChapter.md)
  - [OsunyApi::CommunicationBlockChapterData](docs/CommunicationBlockChapterData.md)
+ - [OsunyApi::CommunicationBlockChapterDataImage](docs/CommunicationBlockChapterDataImage.md)
  - [OsunyApi::CommunicationBlockContact](docs/CommunicationBlockContact.md)
  - [OsunyApi::CommunicationBlockContactData](docs/CommunicationBlockContactData.md)
  - [OsunyApi::CommunicationBlockContactDataElements](docs/CommunicationBlockContactDataElements.md)
@@ -985,6 +1418,8 @@ Class | Method | HTTP request | Description
  - [OsunyApi::CommunicationBlockDefinitionsDataElements](docs/CommunicationBlockDefinitionsDataElements.md)
  - [OsunyApi::CommunicationBlockEmbed](docs/CommunicationBlockEmbed.md)
  - [OsunyApi::CommunicationBlockEmbedData](docs/CommunicationBlockEmbedData.md)
+ - [OsunyApi::CommunicationBlockExhibitions](docs/CommunicationBlockExhibitions.md)
+ - [OsunyApi::CommunicationBlockExhibitionsData](docs/CommunicationBlockExhibitionsData.md)
  - [OsunyApi::CommunicationBlockFeatures](docs/CommunicationBlockFeatures.md)
  - [OsunyApi::CommunicationBlockFeaturesData](docs/CommunicationBlockFeaturesData.md)
  - [OsunyApi::CommunicationBlockFeaturesDataElements](docs/CommunicationBlockFeaturesDataElements.md)
@@ -996,6 +1431,8 @@ Class | Method | HTTP request | Description
  - [OsunyApi::CommunicationBlockGalleryDataElements](docs/CommunicationBlockGalleryDataElements.md)
  - [OsunyApi::CommunicationBlockImage](docs/CommunicationBlockImage.md)
  - [OsunyApi::CommunicationBlockImageData](docs/CommunicationBlockImageData.md)
+ - [OsunyApi::CommunicationBlockJobs](docs/CommunicationBlockJobs.md)
+ - [OsunyApi::CommunicationBlockJobsData](docs/CommunicationBlockJobsData.md)
  - [OsunyApi::CommunicationBlockKeyFigures](docs/CommunicationBlockKeyFigures.md)
  - [OsunyApi::CommunicationBlockKeyFiguresData](docs/CommunicationBlockKeyFiguresData.md)
  - [OsunyApi::CommunicationBlockKeyFiguresDataElements](docs/CommunicationBlockKeyFiguresDataElements.md)
@@ -1006,7 +1443,6 @@ Class | Method | HTTP request | Description
  - [OsunyApi::CommunicationBlockLinksDataElements](docs/CommunicationBlockLinksDataElements.md)
  - [OsunyApi::CommunicationBlockLocations](docs/CommunicationBlockLocations.md)
  - [OsunyApi::CommunicationBlockLocationsData](docs/CommunicationBlockLocationsData.md)
- - [OsunyApi::CommunicationBlockLocationsDataElements](docs/CommunicationBlockLocationsDataElements.md)
  - [OsunyApi::CommunicationBlockOrganizations](docs/CommunicationBlockOrganizations.md)
  - [OsunyApi::CommunicationBlockOrganizationsData](docs/CommunicationBlockOrganizationsData.md)
  - [OsunyApi::CommunicationBlockOrganizationsDataElements](docs/CommunicationBlockOrganizationsDataElements.md)
@@ -1021,6 +1457,7 @@ Class | Method | HTTP request | Description
  - [OsunyApi::CommunicationBlockPostsData](docs/CommunicationBlockPostsData.md)
  - [OsunyApi::CommunicationBlockPrograms](docs/CommunicationBlockPrograms.md)
  - [OsunyApi::CommunicationBlockProgramsData](docs/CommunicationBlockProgramsData.md)
+ - [OsunyApi::CommunicationBlockProgramsDataElements](docs/CommunicationBlockProgramsDataElements.md)
  - [OsunyApi::CommunicationBlockProjects](docs/CommunicationBlockProjects.md)
  - [OsunyApi::CommunicationBlockProjectsData](docs/CommunicationBlockProjectsData.md)
  - [OsunyApi::CommunicationBlockSound](docs/CommunicationBlockSound.md)
@@ -1036,6 +1473,10 @@ Class | Method | HTTP request | Description
  - [OsunyApi::CommunicationBlockVideo](docs/CommunicationBlockVideo.md)
  - [OsunyApi::CommunicationBlockVideoData](docs/CommunicationBlockVideoData.md)
  - [OsunyApi::CommunicationBlockVolumes](docs/CommunicationBlockVolumes.md)
+ - [OsunyApi::CommunicationMedia](docs/CommunicationMedia.md)
+ - [OsunyApi::CommunicationMediaLocalization](docs/CommunicationMediaLocalization.md)
+ - [OsunyApi::CommunicationMediaOriginalBlob](docs/CommunicationMediaOriginalBlob.md)
+ - [OsunyApi::CommunicationMediasBody](docs/CommunicationMediasBody.md)
  - [OsunyApi::CommunicationWebsite](docs/CommunicationWebsite.md)
  - [OsunyApi::CommunicationWebsiteAgendaCategory](docs/CommunicationWebsiteAgendaCategory.md)
  - [OsunyApi::CommunicationWebsiteAgendaCategoryLocalization](docs/CommunicationWebsiteAgendaCategoryLocalization.md)
@@ -1053,7 +1494,14 @@ Class | Method | HTTP request | Description
  - [OsunyApi::CommunicationWebsitePageCategory](docs/CommunicationWebsitePageCategory.md)
  - [OsunyApi::CommunicationWebsitePageCategoryLocalization](docs/CommunicationWebsitePageCategoryLocalization.md)
  - [OsunyApi::CommunicationWebsitePageLocalization](docs/CommunicationWebsitePageLocalization.md)
+ - [OsunyApi::CommunicationWebsitePermalink](docs/CommunicationWebsitePermalink.md)
+ - [OsunyApi::CommunicationWebsitePortfolioCategory](docs/CommunicationWebsitePortfolioCategory.md)
+ - [OsunyApi::CommunicationWebsitePortfolioCategoryLocalization](docs/CommunicationWebsitePortfolioCategoryLocalization.md)
+ - [OsunyApi::CommunicationWebsitePortfolioProject](docs/CommunicationWebsitePortfolioProject.md)
+ - [OsunyApi::CommunicationWebsitePortfolioProjectLocalization](docs/CommunicationWebsitePortfolioProjectLocalization.md)
  - [OsunyApi::CommunicationWebsitePost](docs/CommunicationWebsitePost.md)
+ - [OsunyApi::CommunicationWebsitePostCategory](docs/CommunicationWebsitePostCategory.md)
+ - [OsunyApi::CommunicationWebsitePostCategoryLocalization](docs/CommunicationWebsitePostCategoryLocalization.md)
  - [OsunyApi::CommunicationWebsitePostLocalization](docs/CommunicationWebsitePostLocalization.md)
  - [OsunyApi::CommunicationWebsiteShowcase](docs/CommunicationWebsiteShowcase.md)
  - [OsunyApi::CommunicationWebsiteShowcaseTags](docs/CommunicationWebsiteShowcaseTags.md)
@@ -1063,6 +1511,9 @@ Class | Method | HTTP request | Description
  - [OsunyApi::OneOfcommunicationWebsiteAgendaEventLocalizationBlocksItems](docs/OneOfcommunicationWebsiteAgendaEventLocalizationBlocksItems.md)
  - [OsunyApi::OneOfcommunicationWebsitePageCategoryLocalizationBlocksItems](docs/OneOfcommunicationWebsitePageCategoryLocalizationBlocksItems.md)
  - [OsunyApi::OneOfcommunicationWebsitePageLocalizationBlocksItems](docs/OneOfcommunicationWebsitePageLocalizationBlocksItems.md)
+ - [OsunyApi::OneOfcommunicationWebsitePortfolioCategoryLocalizationBlocksItems](docs/OneOfcommunicationWebsitePortfolioCategoryLocalizationBlocksItems.md)
+ - [OsunyApi::OneOfcommunicationWebsitePortfolioProjectLocalizationBlocksItems](docs/OneOfcommunicationWebsitePortfolioProjectLocalizationBlocksItems.md)
+ - [OsunyApi::OneOfcommunicationWebsitePostCategoryLocalizationBlocksItems](docs/OneOfcommunicationWebsitePostCategoryLocalizationBlocksItems.md)
  - [OsunyApi::OneOfcommunicationWebsitePostLocalizationBlocksItems](docs/OneOfcommunicationWebsitePostLocalizationBlocksItems.md)
  - [OsunyApi::OneOfuniversityOrganizationCategoryLocalizationBlocksItems](docs/OneOfuniversityOrganizationCategoryLocalizationBlocksItems.md)
  - [OsunyApi::OneOfuniversityOrganizationLocalizationBlocksItems](docs/OneOfuniversityOrganizationLocalizationBlocksItems.md)
@@ -1072,8 +1523,13 @@ Class | Method | HTTP request | Description
  - [OsunyApi::PagesCategoriesBody](docs/PagesCategoriesBody.md)
  - [OsunyApi::PagesIdBody](docs/PagesIdBody.md)
  - [OsunyApi::PagesUpsertBody](docs/PagesUpsertBody.md)
+ - [OsunyApi::PortfolioCategoriesBody](docs/PortfolioCategoriesBody.md)
+ - [OsunyApi::PortfolioProjectsBody](docs/PortfolioProjectsBody.md)
+ - [OsunyApi::PostsCategoriesBody](docs/PostsCategoriesBody.md)
  - [OsunyApi::PostsIdBody](docs/PostsIdBody.md)
  - [OsunyApi::PostsUpsertBody](docs/PostsUpsertBody.md)
+ - [OsunyApi::ProjectsIdBody](docs/ProjectsIdBody.md)
+ - [OsunyApi::ProjectsUpsertBody](docs/ProjectsUpsertBody.md)
  - [OsunyApi::UniversityOrganization](docs/UniversityOrganization.md)
  - [OsunyApi::UniversityOrganizationCategory](docs/UniversityOrganizationCategory.md)
  - [OsunyApi::UniversityOrganizationCategoryLocalization](docs/UniversityOrganizationCategoryLocalization.md)
@@ -1090,4 +1546,3 @@ Class | Method | HTTP request | Description
 - **Type**: API key
 - **API key parameter name**: X-Osuny-Token
 - **Location**: HTTP header
-

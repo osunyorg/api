@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **header_cta_label** | **String** |  | [optional] 
 **header_cta_url** | **String** |  | [optional] 
 **add_to_calendar_urls** | [**CommunicationWebsiteAgendaEventLocalizationAddToCalendarUrls**](CommunicationWebsiteAgendaEventLocalizationAddToCalendarUrls.md) |  | [optional] 
+**aliases** | [**Array&lt;CommunicationWebsitePermalink&gt;**](CommunicationWebsitePermalink.md) |  | [optional] 
 **blocks** | [**Array&lt;OneOfcommunicationWebsiteAgendaEventLocalizationBlocksItems&gt;**](.md) |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 

@@ -9,7 +9,8 @@ Name | Type | Description | Notes
 **page_id** | **String** |  | [optional] 
 **category_id** | **String** |  | [optional] 
 **option_image** | **BOOLEAN** |  | [optional] 
+**option_categories** | **BOOLEAN** |  | [optional] 
 **option_main_summary** | **BOOLEAN** |  | [optional] 
 **option_summary** | **BOOLEAN** |  | [optional] 
-**elements** | [**Array&lt;CommunicationBlockLocationsDataElements&gt;**](CommunicationBlockLocationsDataElements.md) |  | [optional] 
+**elements** | [**Array&lt;CommunicationBlockProgramsDataElements&gt;**](CommunicationBlockProgramsDataElements.md) |  | [optional] 
 

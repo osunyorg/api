@@ -4,6 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **String** |  | [optional] 
-**file** | [**CommunicationBlockCallToActionDataImage**](CommunicationBlockCallToActionDataImage.md) |  | [optional] 
-**image** | [**CommunicationBlockCallToActionDataImage**](CommunicationBlockCallToActionDataImage.md) |  | [optional] 
+**file** | [**CommunicationBlockChapterDataImage**](CommunicationBlockChapterDataImage.md) |  | [optional] 
+**image** | [**CommunicationBlockChapterDataImage**](CommunicationBlockChapterDataImage.md) |  | [optional] 
 

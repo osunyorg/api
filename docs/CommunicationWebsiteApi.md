@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**communication_websites_id_get**](CommunicationWebsiteApi.md#communication_websites_id_get) | **GET** /communication/websites/{id} | Shows a website
 
 # **communication_websites_get**
-> Array&lt;CommunicationWebsite&gt; communication_websites_get
+> Array&lt;CommunicationWebsite&gt; communication_websites_get(opts)
 
 Lists the websites
 
@@ -25,10 +25,14 @@ OsunyApi.configure do |config|
 end
 
 api_instance = OsunyApi::CommunicationWebsiteApi.new
+opts = { 
+  page_num: 1, # Integer | Page number
+  per_page: 10000 # Integer | Number of items per page
+}
 
 begin
   #Lists the websites
-  result = api_instance.communication_websites_get
+  result = api_instance.communication_websites_get(opts)
   p result
 rescue OsunyApi::ApiError => e
   puts "Exception when calling CommunicationWebsiteApi->communication_websites_get: #{e}"
@@ -36,7 +40,11 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page_num** | **Integer**| Page number | [optional] [default to 1]
+ **per_page** | **Integer**| Number of items per page | [optional] [default to 10000]
 
 ### Return type
 

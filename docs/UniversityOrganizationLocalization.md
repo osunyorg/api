@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **long_name** | **String** |  | [optional] 
 **featured_image** | [**CommunicationWebsiteAgendaCategoryLocalizationFeaturedImage**](CommunicationWebsiteAgendaCategoryLocalizationFeaturedImage.md) |  | [optional] 
 **meta_description** | **String** |  | [optional] 
+**published** | **BOOLEAN** |  | [optional] 
+**published_at** | **DateTime** |  | [optional] 
 **address_name** | **String** |  | [optional] 
 **address_additional** | **String** |  | [optional] 
 **linkedin** | **String** |  | [optional] 

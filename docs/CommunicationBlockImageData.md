@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**image** | [**CommunicationBlockCallToActionDataImage**](CommunicationBlockCallToActionDataImage.md) |  | [optional] 
+**image** | [**CommunicationBlockChapterDataImage**](CommunicationBlockChapterDataImage.md) |  | [optional] 
 **alt** | **String** |  | [optional] 
 **credit** | **String** |  | [optional] 
 **text** | **String** |  | [optional] 

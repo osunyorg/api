@@ -12,7 +12,7 @@ Method | HTTP request | Description
 [**university_organizations_categories_upsert_post**](UniversityOrganizationCategoryApi.md#university_organizations_categories_upsert_post) | **POST** /university/organizations/categories/upsert | Upsert organization categories
 
 # **university_organizations_categories_get**
-> Array&lt;UniversityOrganizationCategory&gt; university_organizations_categories_get
+> Array&lt;UniversityOrganizationCategory&gt; university_organizations_categories_get(opts)
 
 Lists organization categories
 
@@ -29,10 +29,14 @@ OsunyApi.configure do |config|
 end
 
 api_instance = OsunyApi::UniversityOrganizationCategoryApi.new
+opts = { 
+  page_num: 1, # Integer | Page number
+  per_page: 10000 # Integer | Number of items per page
+}
 
 begin
   #Lists organization categories
-  result = api_instance.university_organizations_categories_get
+  result = api_instance.university_organizations_categories_get(opts)
   p result
 rescue OsunyApi::ApiError => e
   puts "Exception when calling UniversityOrganizationCategoryApi->university_organizations_categories_get: #{e}"
@@ -40,7 +44,11 @@ end
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **page_num** | **Integer**| Page number | [optional] [default to 1]
+ **per_page** | **Integer**| Number of items per page | [optional] [default to 10000]
 
 ### Return type
 
@@ -177,7 +185,7 @@ end
 api_instance = OsunyApi::UniversityOrganizationCategoryApi.new
 id = 'id_example' # String | Category identifier
 opts = { 
-  body: OsunyApi::CategoriesIdBody2.new # CategoriesIdBody2 | 
+  body: OsunyApi::CategoriesIdBody4.new # CategoriesIdBody4 | 
 }
 
 begin
@@ -193,7 +201,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| Category identifier | 
- **body** | [**CategoriesIdBody2**](CategoriesIdBody2.md)|  | [optional] 
+ **body** | [**CategoriesIdBody4**](CategoriesIdBody4.md)|  | [optional] 
 
 ### Return type
 
@@ -280,7 +288,7 @@ end
 
 api_instance = OsunyApi::UniversityOrganizationCategoryApi.new
 opts = { 
-  body: OsunyApi::CategoriesUpsertBody2.new # CategoriesUpsertBody2 | 
+  body: OsunyApi::CategoriesUpsertBody4.new # CategoriesUpsertBody4 | 
 }
 
 begin
@@ -295,7 +303,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CategoriesUpsertBody2**](CategoriesUpsertBody2.md)|  | [optional] 
+ **body** | [**CategoriesUpsertBody4**](CategoriesUpsertBody4.md)|  | [optional] 
 
 ### Return type
 

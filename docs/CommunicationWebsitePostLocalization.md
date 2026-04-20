@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **slug** | **String** |  | [optional] 
 **subtitle** | **String** |  | [optional] 
 **summary** | **String** |  | [optional] 
-**text** | **String** |  | [optional] 
+**aliases** | [**Array&lt;CommunicationWebsitePermalink&gt;**](CommunicationWebsitePermalink.md) |  | [optional] 
 **blocks** | [**Array&lt;OneOfcommunicationWebsitePostLocalizationBlocksItems&gt;**](.md) |  | [optional] 
 **created_at** | **DateTime** |  | [optional] 
 **updated_at** | **DateTime** |  | [optional] 

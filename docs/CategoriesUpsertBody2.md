@@ -3,5 +3,5 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**categories** | [**Array&lt;UniversityOrganizationCategory&gt;**](UniversityOrganizationCategory.md) |  | 
+**categories** | [**Array&lt;CommunicationWebsitePortfolioCategory&gt;**](CommunicationWebsitePortfolioCategory.md) |  | 
 

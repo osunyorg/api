@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **url** | **String** |  | [optional] 
+**hosting** | **String** |  | [optional] 
 **deuxfleurs** | [**CommunicationWebsiteDeuxfleurs**](CommunicationWebsiteDeuxfleurs.md) |  | [optional] 
 **features** | [**CommunicationWebsiteFeatures**](CommunicationWebsiteFeatures.md) |  | [optional] 
 **git** | [**CommunicationWebsiteGit**](CommunicationWebsiteGit.md) |  | [optional] 

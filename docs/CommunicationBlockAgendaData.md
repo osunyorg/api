@@ -16,5 +16,8 @@ Name | Type | Description | Notes
 **option_subtitle** | **BOOLEAN** |  | [optional] 
 **option_summary** | **BOOLEAN** |  | [optional] 
 **option_status** | **BOOLEAN** |  | [optional] 
+**kind_parent** | **BOOLEAN** |  | [optional] 
+**kind_child** | **BOOLEAN** |  | [optional] 
+**kind_recurring** | **BOOLEAN** |  | [optional] 
 **elements** | [**Array&lt;CommunicationBlockAgendaDataElements&gt;**](CommunicationBlockAgendaDataElements.md) |  | [optional] 
 
