@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    osuny_api (1.0.0)
+    osuny_api (1.1.0)
       json (~> 2.1, >= 2.1.0)
       typhoeus (~> 1.0, >= 1.0.1)
 
@@ -15,6 +15,7 @@ GEM
     diff-lcs (1.6.1)
     ethon (0.16.0)
       ffi (>= 1.15.0)
+    ffi (1.17.2)
     ffi (1.17.2-arm64-darwin)
     ffi (1.17.2-x86_64-darwin)
     jaro_winkler (1.5.6)
@@ -65,6 +66,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+  arm64-darwin-25
   x86_64-darwin-22
   x86_64-darwin-24
 
