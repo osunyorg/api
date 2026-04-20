@@ -24,6 +24,7 @@ GEM
     json (2.19.4)
     logger (1.7.0)
     method_source (1.1.0)
+    ostruct (0.6.3)
     parallel (1.28.0)
     parser (3.3.11.1)
       ast (~> 2.4.1)
@@ -77,6 +78,7 @@ PLATFORMS
   x86_64-darwin-24
 
 DEPENDENCIES
+  ostruct (~> 0.6, >= 0.6.3)
   osuny_api!
   pry-byebug
   rake (~> 13.0.1)
